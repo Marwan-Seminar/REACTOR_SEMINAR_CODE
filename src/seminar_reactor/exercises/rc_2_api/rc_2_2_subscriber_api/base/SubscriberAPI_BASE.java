@@ -109,7 +109,7 @@ class SimpleSubscriber extends BaseSubscriber<Integer>{
  * Dieser fordert immer 32 Items auf einmal an
  * führt diese in einem Hintergrund Thread aus
  * */
-class AdvancedeSubscriber extends BaseSubscriber<Integer>{
+class AdvancedSubscriber extends BaseSubscriber<Integer>{
 	
 	// Subscription
 	Subscription subscription;

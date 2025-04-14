@@ -31,6 +31,10 @@ public class SubscriberAPI_Solution {
 		instance.a_lambdaSubscriber();
 		
 		instance.b_simpleBaseSubscriber();
+		
+		//instance.c_advancedBaseSubscriber();
+		
+		
 
 	}
 
@@ -55,9 +59,21 @@ public class SubscriberAPI_Solution {
 		
 		Flux<Integer> source = Flux.range(0, 10);
 		
-		source.subscribe( new SimpleSubscriber());
+		source.subscribe(new SimpleSubscriber());
 		
 	}
+	
+	
+	private void c_advancedBaseSubscriber() {
+		
+		System.out.println("b) Simple Base Subscriber ");
+		
+		Flux<Integer> source = Flux.range(0, 70);
+		
+		source.subscribe(new AdvancedSubscriber());
+		
+	}
+
 
 	
 }
@@ -111,7 +127,7 @@ class SimpleSubscriber extends BaseSubscriber<Integer>{
  * Dieser fordert immer 32 Items auf einmal an
  * führt diese in einem Hintergrund Thread aus
  * */
-class AdvancedeSubscriber extends BaseSubscriber<Integer>{
+class AdvancedSubscriber extends BaseSubscriber<Integer>{
 	
 	// Subscription
 	Subscription subscription;
@@ -152,14 +168,14 @@ class AdvancedeSubscriber extends BaseSubscriber<Integer>{
 	protected void hookOnNext(Integer value) {
 		
 		// Element value in Pool-Thread verarbeiten
-		// und dabei das Batch-Managment realisiren
+		// und dabei das Batch-Managment realisieren
 		threadPool.execute(()-> {
-			System.out.println("AdvancedeSubscriber.hookOnNext() " + value + " " + Thread.currentThread()) ;
+			System.out.println("AdvancedSubscriber.hookOnNext() " + value + " " + Thread.currentThread()) ;
 					
 			int currentRemaining = remainingCount.decrementAndGet();
-			System.out.println("remaining " +  currentRemaining) ;
+			System.out.println("remaining space in buffer: " +  currentRemaining) ;
 			if( currentRemaining == 0) {
-				System.out.println("\nNEW BATCH\n") ;
+				System.out.println("\nNEW BATCH ORDERING\n") ;
 				
 				// Buchfuehung fuer Batch aktualisieren
 				// muss VOR request stehen!! Sonst lauft onNext() schon los.
