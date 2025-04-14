@@ -19,7 +19,7 @@ import reactor.core.publisher.Flux;
  * 		.doOnNext(i -> {...})
  *
  *
- * b) 	In welchen Threads laufen die Stream-Stufen? Laufen sie parallel oder nacheinander
+ * b) 	In welchen Threads laufen die Stream-Stufen? Laufen sie parallel oder nacheinander?
  *
  * 		Hinweis: .map( value -> {System.out.println( Thread.currentThread(); return value;}); 
  * 
