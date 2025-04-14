@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 /* 
- * Shows Minimalsitic Implementation of jdk Flow Interfaces API for Slide
+ *  Minimalsitische Implementierung eines Streams auf Basis der jdk Flow Interfaces API 
  *  
  * 
  *  Alle drei Interfaces, Publisher, Subscriber, Subscription sind hier prototypisch implementiert.
@@ -101,15 +101,21 @@ class MySimplePublisher implements Flow.Publisher<Integer>{
 	
 	@Override
 	public void subscribe(Subscriber<? super Integer> subscriber) {
+		// Den Subscriber merken
 		this.subscriber = subscriber;	
+		
+		// Dem Subscriber die Subscription uebergeben
 		this.subscriber.onSubscribe(new MySimpleSubscription(subscriber, executor));
 	}
 	
 	
 	/*
 	 * Typically the Subscription is a static inner class of Publisher
+	 * 
+	 * Das Entscheidende in dieser Klasse ist, dass in der Methode request(int) die Ausfuehrung 
+	 * Uebertragung der Daten stattfindet.
 	 */
-	static class  MySimpleSubscription implements Flow.Subscription{
+	static class MySimpleSubscription implements Flow.Subscription{
 		
 		Flow.Subscriber<? super Integer> subscriber;
 		// points to MySimplePublisher.executor
@@ -151,22 +157,40 @@ class MySimplePublisher implements Flow.Publisher<Integer>{
 	}	 
 }
 
+/*
+ * Dies ist der Subscriber
+ */
 class MySimpleSubscriber implements Flow.Subscriber<Integer>{
 
+	// Er kenne seine die Subscription
 	Flow.Subscription subscription; 
 	
+	// die Größe des internen Buffers für emfpangene Daten
 	static final int BUFFER_SIZE = 1000;
 	
+	// Zaehler für empfangene und gebufferte Daten
 	AtomicInteger receivedCount = new AtomicInteger(0);
 	AtomicInteger bufferCount = new AtomicInteger(0);
 	
+	/*
+	 * Bei der Anmeldung die Subscrition merken, und direkt 
+	 * BUFFER_SIZE viele Elemente bestellen.
+	 */
 	@Override
 	public void onSubscribe(Subscription subscription) {
 		this.subscription = subscription;
 		this.subscription.request(BUFFER_SIZE);
 	}
 
-	
+	/*
+	 * Daten emfangen und zaehlen.
+	 * 
+	 * Eine reale Bufferung und Verarbetung der Daten fehlt hier.
+	 * 
+	 * Buffer Verwaltung wir qusi "simuliert" indem die empfangenen 
+	 * Elemente gezaehlt werden, und wenn die BUFFER_SIZE erreicht ist, 
+	 * ein neuer Batch bestellt wird.
+	 */
 	@Override
 	public void onNext(Integer item) {
 		if(item% 1000 == 0) {

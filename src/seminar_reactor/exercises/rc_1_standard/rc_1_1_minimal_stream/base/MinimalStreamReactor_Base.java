@@ -11,14 +11,14 @@ import reactor.core.publisher.Flux;
  * Ein Flux versendet die Zahlen 1-100, ein Subscriber empfaengt sie, und schreibt sie auf die Shell.
  * 
  * Hinweise: 
- * 	- Flux.range(1, 100) gibt ein Observable zur�ck, das das die Daten emittiert
+ * 	- Flux.range(1, 100) gibt ein Observable zurueck, das das die Daten emittiert
  * 	- Flux.subscribe(
  * 		i -> {
  * 			System.out.println(i);
  * 		}):
- * realieisert einen Subscriber, der die Daten auf die Shell schreibt.
+ * realisiert einen Subscriber, der die Daten auf die Shell schreibt.
  * 
- * Lernziel: Stream Programmierung kennenlernen
+ * Lernziel: Stream Programmierungs-API kennenlernen
  */
 public class MinimalStreamReactor_Base {
 

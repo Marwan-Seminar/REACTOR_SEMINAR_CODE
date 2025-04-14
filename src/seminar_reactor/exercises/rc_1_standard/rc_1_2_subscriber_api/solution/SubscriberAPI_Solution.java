@@ -11,11 +11,12 @@ import reactor.core.publisher.Flux;
  * org.reactivestreams.Subscriber implementieren
  * 
  * Programmieren Sie einen Subscriber.
- * Implementieren Sie dafuer das Interface org.reactivestreams.Subscriber.
  * 
- * a) Subcribieren Sie Ihren Subscriber an ein Reactor Flux.range(1,100)
+ * a) Implementieren Sie dafuer das Interface org.reactivestreams.Subscriber.
  * 
- * b) Zeigen Sie durch Shell-Ausgaben, wann welche Methoden aufgerufen werden. 
+ * b) Subcribieren Sie Ihren Subscriber an ein Reactor Flux.range(1,100)
+ * 
+ * c) Zeigen Sie durch Shell-Ausgaben, wann welche Methoden aufgerufen werden. 
  * 
  * HINWEIS: 
  * 	- Sie muessen sich die Subscription merken, die im onSubscribe() Aufruf uebergeben wird
@@ -27,6 +28,8 @@ import reactor.core.publisher.Flux;
 public class SubscriberAPI_Solution {
 	
 	public static void main(String[] args) {
+		
+		System.out.println("SubscriberAPI_Solution");
 		
 		SubscriberAPI_Solution instance = new SubscriberAPI_Solution();
 		

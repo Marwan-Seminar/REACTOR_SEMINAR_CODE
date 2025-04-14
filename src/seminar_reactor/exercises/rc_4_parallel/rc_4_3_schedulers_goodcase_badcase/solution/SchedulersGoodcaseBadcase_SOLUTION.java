@@ -120,6 +120,7 @@ public class SchedulersGoodcaseBadcase_SOLUTION {
 				Flux.range(1, 1)
 				// TODO finde einen geeigneten Scheduler
 				.subscribeOn(Schedulers.boundedElastic());// Gutfall
+		
 				//.subscribeOn(Schedulers.parallel()); // Schlechtfall
 				
 		long start = System.currentTimeMillis();
