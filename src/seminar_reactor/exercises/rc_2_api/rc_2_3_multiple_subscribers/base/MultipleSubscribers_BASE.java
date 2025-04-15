@@ -4,7 +4,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
 /*
- * Baue einen Stream mit mehreren Subscribern und untersuchen Sie unter welchen Bedingungen diese 
+ * Baue einen Stream mit mehreren Subscribern und untersuche unter welchen Bedingungen diese 
  * gleichzeitig oder nacheinander mit Daten versorgt werden
  * 
  * Hinweise: 
@@ -19,7 +19,8 @@ public class MultipleSubscribers_BASE {
 		
 		instance.twoSubscribersNaive();
 		
-		// TODO: warten, bis alle anderen Threads des PRogramms fertig sind
+		// TODO: warten, bis alle anderen Threads des Programms fertig sind
+		
 	}
 
 	private void twoSubscribersNaive() {
@@ -28,7 +29,7 @@ public class MultipleSubscribers_BASE {
 		
 		
 		// TODO: Die Source parallelisieren
-		
+	
 		source.subscribe(i ->{
 			System.out.println("Subscriber 1 " + i + " " + Thread.currentThread());
 		});
