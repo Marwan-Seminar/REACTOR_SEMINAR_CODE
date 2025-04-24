@@ -33,7 +33,7 @@ public class GeneratorAPI_Solution {
 		
 		GeneratorAPI_Solution instance = new GeneratorAPI_Solution();
 		
-		instance.a_genarateStateless();
+		instance.a_generateStateless();
 		
 		instance.b_generateStateObject();
 		
@@ -42,7 +42,7 @@ public class GeneratorAPI_Solution {
 		instance.d_createAsynchronous();
 	}
 
-	private void a_genarateStateless() {
+	private void a_generateStateless() {
 		
 		System.out.println("GeneratorAPI.a_genarateStateless()");
 		
