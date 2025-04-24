@@ -19,7 +19,7 @@ import reactor.core.publisher.SynchronousSink;
 
 /*
  * 
- * Diese Uebung demonstirert die Generator API von Reactor
+ * Diese Uebung demonstriert die Generator API von Reactor
  * 
  * a) Baue einen Genarator mit generate() der Zufallszahlen emittiert
  * 
@@ -27,7 +27,7 @@ import reactor.core.publisher.SynchronousSink;
  * 
  * c) Baue einen Generator mit create() der die Folge 1..10 emittiert
  * 
- * d) Baue einen Generator mit create() asynchone Events (Button-Clicks )in den Stream einspeist 
+ * d) Baue einen Generator mit create() asynchrone Events (Button-Clicks )in den Stream einspeist 
  * 
  */
 public class GeneratorAPI_Base {
@@ -36,7 +36,7 @@ public class GeneratorAPI_Base {
 		
 		GeneratorAPI_Base instance = new GeneratorAPI_Base();
 		
-		//instance.a_genarateStateless();
+		//instance.a_generateStateless();
 		
 		//instance.b_generateStateObject();
 		
@@ -45,7 +45,7 @@ public class GeneratorAPI_Base {
 		instance.d_createAsynchronous();
 	}
 
-	private void a_genarateStateless() {
+	private void a_generateStateless() {
 		
 		System.out.println("GeneratorAPI.a_genarateStateless()");
 		
