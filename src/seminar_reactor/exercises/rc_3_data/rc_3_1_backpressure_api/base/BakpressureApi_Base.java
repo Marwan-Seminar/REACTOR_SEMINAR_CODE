@@ -35,11 +35,11 @@ public class BakpressureApi_Base {
 		BakpressureApi_Base instance = new BakpressureApi_Base();
 		
 	
-		//instance.memoryOverflowStream_Solution_a();
+		instance.memoryOverflowStream_Solution_a();
 		
 		//instance.memoryOverflowStream_Solution_b();
 		
-		instance.memoryOverflowStream_Solution_c();
+		//instance.memoryOverflowStream_Solution_c();
 		
 		sleep(120000);
 	}

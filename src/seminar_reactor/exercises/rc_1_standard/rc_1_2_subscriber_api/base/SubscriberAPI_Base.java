@@ -15,7 +15,7 @@ import reactor.core.publisher.Flux;
  * 
  * b) Subcribieren Sie Ihren Subscriber an ein Reactor Flux.range(1,100)
  * 
- * c) Zeigen Sie durch Shell-Ausgaben, wann welche Methoden aufgerufen werden. 
+ * c) Zeigen Sie durch Shell-Ausgaben, wann welche Subscriber Methoden aufgerufen werden. 
  * 
  * HINWEIS: 
  * 	- Sie muessen sich die Subscription merken, die im onSubscribe() Aufruf uebergeben wird

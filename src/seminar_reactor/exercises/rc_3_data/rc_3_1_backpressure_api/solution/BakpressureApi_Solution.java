@@ -87,10 +87,10 @@ public class BakpressureApi_Solution {
 				@Override
 				protected void hookOnSubscribe(Subscription subscription) {
 					// TODO Backpressure erzeugen
-					// Kein Backpressure:
-					//super.hookOnSubscribe(subscription);
-					// Backpressure: 
-					subscription.request(20);
+					// Kein Backpressure: super.hookOnSubscribe(subscription) sorgt dafür, dass kein Backpressure entsteht. Es muss auskommentiert werden, um den Absturz zu erzeugen.
+					super.hookOnSubscribe(subscription);
+					// Backpressure: Wenn diese Zeile einkommentiert wird, entsteht Backpressure, der zum Absturz fuehrt!
+					//subscription.request(20);
 					
 					
 				}
@@ -159,7 +159,7 @@ public class BakpressureApi_Solution {
 	
 	
 	/*
-	 * Dieser Stream loest das PRoblem, indem 
+	 * Dieser Stream loest das Problem, indem 
 	 * dem Flux.create() mittels OverflowStrategy.DROP sagt
 	 * dass die ueberschuessigen Items verworfen werden sollen
 	 */

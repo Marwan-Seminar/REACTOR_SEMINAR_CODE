@@ -39,6 +39,8 @@ public class PublishOnSpeedup_Base {
 				}
 			)
 			
+			// TODO: Hier eine Entkopplung zwischen den STufen des Streams einbauen, so dass die beiden Stufen in unterschiedlichen Threads laufen 
+			
 			.subscribe(i -> {
 				System.out.println("Subscriber: " + i + " " + Thread.currentThread().getName());
 				// Dieser Aufruf macht den Subscriber langsam
