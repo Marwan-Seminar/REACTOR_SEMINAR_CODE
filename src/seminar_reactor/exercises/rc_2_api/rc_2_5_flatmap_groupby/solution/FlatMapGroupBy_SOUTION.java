@@ -6,7 +6,7 @@ import reactor.core.scheduler.Schedulers;
 
 /*
  * a) 	Zerlege die Zahlen 1..100 in vier Gruppen. 
- * 		Jede Gruppe enthält die Zaheln, die denselben Wert modulo 4 haben.
+ * 		Jede Gruppe enthaelt die Zahlen, die denselben Wert modulo 4 haben.
  * 		Zeige durch Shell-Output welche Zahl in welcher Gruppe ist.
  * 		Hinweis: groupBy()
  * 
@@ -15,8 +15,8 @@ import reactor.core.scheduler.Schedulers;
  * 		Hinweis: flatMap()
  * 
  * c) 	Parallelisiere die Loesung b) so, dass die Elemente verschiedener
- * 		Gruppen parallel verarbeitet werden .
- * 		Zeige die Parallelität durch Shell Ausgaben
+ * 		Gruppen parallel verarbeitet werden.
+ * 		Zeige die Parallelitaet durch Shell Ausgaben
  * 		Hinweis: publishOn(Schedulers.parallel()) 
  * 
  */
@@ -30,7 +30,7 @@ public class FlatMapGroupBy_SOUTION {
 		
 		//instance.b_mergingFlatMap();
 		
-		//instance.c_parallelFlatMapGroupBy();
+		instance.c_parallelFlatMapGroupBy();
 		
 		sleep(3000);
 	}
