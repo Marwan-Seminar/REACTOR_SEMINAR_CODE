@@ -88,9 +88,9 @@ public class BakpressureApi_Solution {
 				protected void hookOnSubscribe(Subscription subscription) {
 					// TODO Backpressure erzeugen
 					// Kein Backpressure: super.hookOnSubscribe(subscription) sorgt dafür, dass kein Backpressure entsteht. Es muss auskommentiert werden, um den Absturz zu erzeugen.
-					super.hookOnSubscribe(subscription);
+					//super.hookOnSubscribe(subscription);
 					// Backpressure: Wenn diese Zeile einkommentiert wird, entsteht Backpressure, der zum Absturz fuehrt!
-					//subscription.request(20);
+					subscription.request(20);
 					
 					
 				}

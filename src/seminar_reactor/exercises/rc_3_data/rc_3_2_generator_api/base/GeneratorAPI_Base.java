@@ -36,13 +36,13 @@ public class GeneratorAPI_Base {
 		
 		GeneratorAPI_Base instance = new GeneratorAPI_Base();
 		
-		//instance.a_generateStateless();
+		instance.a_generateStateless();
 		
 		//instance.b_generateStateObject();
 		
 		//instance.c_createSynchronous();
 		
-		instance.d_createAsynchronous();
+		//instance.d_createAsynchronous();
 	}
 
 	private void a_generateStateless() {
