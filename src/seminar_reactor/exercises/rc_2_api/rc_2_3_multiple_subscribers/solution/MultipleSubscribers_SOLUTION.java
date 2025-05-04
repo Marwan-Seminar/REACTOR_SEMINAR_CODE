@@ -4,7 +4,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
 /*
- * Baue einen Stream mit mehreren Subscribern und untersuchen Sie unter welchen Bedingungen diese 
+ * Baue einen Stream mit mehreren Subscribern und untersuche unter welchen Bedingungen diese 
  * gleichzeitig oder nacheinander mit Daten versorgt werden
  * 
  * Hinweise: 
